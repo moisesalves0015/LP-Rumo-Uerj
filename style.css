@@ -98,10 +98,45 @@
 
 .BannerComum{
     margin-inline: auto;
+
 }
+
+
 @media (max-width: 480px) {
     .container {
         flex-direction: column;
         padding: 10px;
     }
+    .BannerComum{
+    width: 400px;
+
+}
+}
+
+
+.faixa-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: #30FF14;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 0;
+  white-space: nowrap;
+  position: relative;
+}
+
+.faixa-conteudo {
+  display: inline-block;
+  white-space: nowrap;
+  animation: faixa-contínua 20s linear infinite;
+}
+
+@keyframes faixa-contínua {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
