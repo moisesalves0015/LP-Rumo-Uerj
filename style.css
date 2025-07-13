@@ -16,7 +16,7 @@
 .header-section {
     display: flex;
     flex-direction: row;
-    padding-inline: 2rem;
+    padding: 0 0 2rem  0;
     justify-content: space-around;
 
 }
@@ -44,7 +44,7 @@
     font-size: 2.4rem;
     margin: 5px;
 }
-.header-section h5 {
+.header-section h4 {
    color: white;
 }
 
@@ -62,6 +62,14 @@
     flex-direction: row;
     align-items: center;
     margin-top: 2rem;
+    text-align: center;
+}
+.header-nav h4 {
+    display: flex;
+    gap:3px;
+    justify-content: center;
+
+    
 }
 
 .hero header {
@@ -76,43 +84,32 @@
 
 .button-login {
     border: 2px solid #30FF14;
-    height: 35px;
+    height: 40px;
     border-radius: 9px;
-    padding: 7px 10px;
+    padding: 5px 10px;
     color: #30FF14;
     background-color: black;
     font-weight: 600;
     margin-right: 15px;
+    font-size: 1rem;
 }
 
 .button-register {
     border: 2px solid #30FF14;
-    height: 35px;
+    height: 40px;
     border-radius: 9px;
-    padding: 7px 10px;
+    padding: 5px 10px;
     color: black;
     background-color: #30FF14;
     font-weight: 600;
     margin-right: 15px;
+    font-size: 1rem;
 }
 
 .BannerComum{
     margin-inline: auto;
 
 }
-
-
-@media (max-width: 480px) {
-    .container {
-        flex-direction: column;
-        padding: 10px;
-    }
-    .BannerComum{
-    width: 400px;
-
-}
-}
-
 
 .faixa-container {
   width: 100%;
@@ -139,4 +136,46 @@
   100% {
     transform: translateX(-50%);
   }
+}
+
+
+.oferecemos-section{
+    display: flex;
+    flex-direction: row;
+      padding:  2rem;
+    
+
+}
+.oferecemos-section aside{
+   padding: 1rem;
+   margin: 0.5rem;
+   border-radius: 15px;
+    
+
+}
+.oferecemos-section div{
+    display: flex;
+    
+
+}
+
+.oferecemos-section div article{
+   background-color: black;
+   color: white;
+   padding: 1rem;
+   margin: 0.5rem;
+   border-radius: 15px;
+
+}
+
+@media (max-width: 780px) {
+    .container {
+        flex-direction: column;
+        padding: 10px;
+        align-items: center;
+    }
+    .BannerComum{
+    width: 350px;
+
+}
 }
