@@ -146,6 +146,7 @@
     display: flex;
     flex-direction: row;
       padding:  2rem;
+      margin-block: 2rem 5rem;
     
 
 }
@@ -170,15 +171,43 @@
    border-radius: 15px;
 
 }
+.prepare-section{
+    display: flex;
+    flex-direction: row;
+    background-color: #30FF14;
+    padding: 3rem 3rem 0 3rem;
+justify-content: space-evenly;
+}
+
+.prepare-section aside div {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+.prepare-section aside div article {
+justify-content: center;
+text-align: center;
+}
+
+.BannerUerj{
+margin-top:-7rem ;
+
+}
+
 
 @media (max-width: 780px) {
     .container {
         flex-direction: column;
         padding: 10px;
         align-items: center;
+        text-align: center;
     }
     .BannerComum{
     width: 350px;
+
+}
+.BannerUerj{
+margin-top:-5rem ;
 
 }
 .button-inscreva{
