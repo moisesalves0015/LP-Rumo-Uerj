@@ -1,0 +1,637 @@
+* {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+.logo{
+  height: 70px;
+}
+
+.hero {
+  width: 100%;
+
+background-image: url(./assets/imgs/11540.jpg);
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+.header-section {
+  display: flex;
+  flex-direction: row;
+  padding: 0 0 2rem 0;
+  justify-content: space-around;
+
+}
+
+.header-section div {
+
+  color: #30FF14;
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+
+
+
+}
+
+.header-section div:nth-child(1) {
+
+  padding: 1rem;
+
+
+
+}
+
+.header-section h1 {
+  font-size: 2.4rem;
+  margin: 5px;
+}
+
+.header-section h4 {
+  color: white;
+}
+
+.header-section p {
+  color: white;
+
+}
+
+.header-section h1 span {
+  color: #2e7026;
+}
+
+.header-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.header-nav h4 {
+  display: flex;
+  gap: 3px;
+  justify-content: center;
+
+
+}
+
+.hero header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-inline: 2rem;
+  align-items: center;
+  margin-left: 1rem;
+  margin-top: 10px;
+}
+
+.button-login {
+  border: 2px solid #30FF14;
+  height: 40px;
+  border-radius: 9px;
+  padding: 5px 10px;
+  color: #30FF14;
+  background-color: black;
+  font-weight: 600;
+  margin-right: 15px;
+  font-size: 1rem;
+}
+
+.button-register {
+  border: 2px solid #30FF14;
+  height: 40px;
+  border-radius: 9px;
+  padding: 5px 10px;
+  color: black;
+  background-color: #30FF14;
+  font-weight: 600;
+  margin-right: 15px;
+  font-size: 1rem;
+}
+
+.BannerComum {
+  margin-inline: auto;
+
+
+
+
+
+}
+
+.faixa-container {
+  width: 100%;
+  overflow: hidden;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 0;
+  white-space: nowrap;
+  position: relative;
+  text-align: center;
+  margin-inline: auto;
+
+   font-family: "Orbitron", sans-serif;
+
+  /* From https://css.glass */
+background: rgba(48, 255, 20, 0.81);
+
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(4.3px);
+-webkit-backdrop-filter: blur(4.3px);
+border: 1px solid rgba(48, 255, 20, 0.83);
+
+  
+}
+
+.faixa-conteudo {
+  display: inline-block;
+  white-space: nowrap;
+  animation: faixa-contínua 20s linear infinite;
+}
+
+@keyframes faixa-contínua {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+.oferecemos-section {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  margin-block: 2rem 5rem;
+
+
+}
+
+.oferecemos-section aside {
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: 15px;
+
+
+}
+
+.oferecemos-section div {
+  display: flex;
+
+
+}
+
+.oferecemos-section div article {
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: 15px;
+
+}
+
+.prepare-section {
+  display: flex;
+  flex-direction: row;
+  background-color: #30FF14;
+  padding: 3rem 3rem 0 3rem;
+  justify-content: space-evenly;
+  color: black;
+  padding: 10px 0;
+  white-space: nowrap;
+  position: relative;
+  text-align: center;
+  margin-inline: auto;
+width: 95%;
+   font-family: "Orbitron", sans-serif;
+
+  /* From https://css.glass */
+background: rgba(48, 255, 20, 0.81);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(4.3px);
+-webkit-backdrop-filter: blur(4.3px);
+border: 1px solid rgba(48, 255, 20, 0.83);
+
+}
+
+.prepare-section aside div {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+.prepare-section aside div article {
+  justify-content: center;
+  text-align: center;
+}
+
+.BannerUerj {
+  margin-top: -7rem;
+
+}
+
+.courses-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+
+
+}
+.curso-header-moderno{
+
+    /* From https://css.glass */
+background: rgba(48, 255, 20, 0.81);
+
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(4.3px);
+-webkit-backdrop-filter: blur(4.3px);
+border: 1px solid rgba(48, 255, 20, 0.83);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos base */
+:root {
+  --primary: #4361ee;
+  --primary-light: #4895ef;
+  --secondary: #3f37c9;
+  --dark: #1b263b;
+  --light: #f8f9fa;
+  --success: #4cc9f0;
+  --text: #2b2d42;
+  --text-light: #8d99ae;
+}
+
+/* Container principal */
+.cursos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: black;
+}
+
+/* Card de curso */
+.curso-card-moderno {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  background: white;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.curso-card-moderno:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Badge */
+.curso-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: var(--success);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  z-index: 2;
+}
+
+/* Header */
+.curso-header-moderno {
+  color: white;
+  padding: 25px 20px;
+  position: relative;
+}
+
+.curso-header-moderno::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: white;
+  border-radius: 50% 50% 0 0 / 30px;
+}
+
+.curso-categoria {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.9;
+  margin-bottom: 5px;
+}
+
+.curso-titulo {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* Content */
+.curso-content {
+  padding: 30px 20px 20px;
+}
+
+.professor-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.professor-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 15px;
+  border: 3px solid var(--light);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.professor-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.professor-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.professor-nome {
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 3px;
+}
+
+.professor-especialidade {
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+.curso-descricao {
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.curso-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+.meta-item i {
+  margin-right: 5px;
+  font-size: 14px;
+}
+
+/* Footer */
+.curso-footer-moderno {
+  display: flex;
+  border-top: 1px solid #eee;
+  padding: 15px 20px;
+}
+
+.btn-inscrever {
+  flex: 1;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.btn-inscrever:hover {
+  filter: brightness(1.1);
+}
+
+.btn-detalhes {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  transition: color 0.3s;
+  font-size: 14px;
+}
+
+.btn-detalhes:hover {
+  color: var(--secondary);
+}
+
+.btn-detalhes i {
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .cursos-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .curso-card-moderno {
+    max-width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 780px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+   
+
+
+  }
+
+  .BannerComum {
+    width: 350px;
+
+  }
+
+  .BannerUerj {
+    margin-top: -5rem;
+
+  }
+
+  .button-inscreva {
+    width: 250px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    animation: pulsar 1.5s ease-in-out infinite;
+    transition: background-color 0.3s ease;
+
+  }
+
+  .button-inscreva:hover {
+    background-color: #24c10f;
+  }
+
+  @keyframes pulsar {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.1);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+}
+
+
+@keyframes entrarLateral {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* Estilos para TODAS as células da tabela (não precisa de classes) */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* Isso é essencial */
+}
+
+.admin-table td, .admin-table th {
+  padding: 0.75rem;
+  border: 1px solid #eee;
+  word-break: break-word; /* Quebra palavras longas */
+  overflow-wrap: anywhere; /* Mais eficiente que break-word */
+  hyphens: auto; /* Adiciona hífens quando necessário */
+}
+
+/* Define larguras padrão para colunas baseadas na posição */
+.admin-table th:nth-child(1),
+.admin-table td:nth-child(1) {
+  width: 20%; /* Para coluna de título */
+}
+
+.admin-table th:nth-child(2),
+.admin-table td:nth-child(2) {
+  width: 20%; /* Para coluna de descrição */
+}
+
+/* As demais colunas dividem o espaço restante */
+.admin-table th:nth-child(n+3),
+.admin-table td:nth-child(n+3) {
+  width: auto;
+  min-width: 100px;
+}
+
+/* Estilo para conteúdo muito longo (opcional) */
+.admin-table td {
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+
+
+
+

@@ -1,129 +1,850 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+
+/* Estilos Gerais */
 * {
-    margin: 0;
-    font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.hero {
-    width: 100%;
-
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-
-
-}
-
-.header-section {
-    display: flex;
-    flex-direction: row;
-    padding: 0 0 2rem  0;
-    justify-content: space-around;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f5f7fa;
+  color: #333;
+  height: 100vh;
 
 }
+.body-aluno {
+background-image: url(./assets/imgs/abstratos-techno-fundo-ligar-linhas.jpg);
+  
+    background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 
-.header-section div {
-
-    color: #30FF14;
-    display: flex;
-    align-items: left;
-    flex-direction: column;
-
-
+}
+.frase-welcome{
+  color: white;
+  text-align: center;
+  font-weight: 500;
+  margin-block: 10px;
+  
 
 }
 
-.header-section div:nth-child(1) {
-
-    padding: 1rem;
-
-
-
+/* Cabeçalho */
+.admin-header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.header-section h1 {
-    font-size: 2.4rem;
-    margin: 5px;
-}
-.header-section h4 {
-   color: white;
+.admin-header h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
-.header-section p {
+/* Container Principal */
+.admin-container {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Abas de Navegação */
+.admin-tabs {
+  display: flex;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.tab-btn {
+  padding: 0.75rem 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #555;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.tab-btn.active {
+  color: #2c3e50;
+  border-bottom: 3px solid #3498db;
+  font-weight: 600;
+}
+
+.tab-btn:hover:not(.active) {
+  color: #3498db;
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+/* Conteúdo das Abas */
+.tab-content {
+  margin-top: 1rem;
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Cards */
+.admin-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.card-header h2 {
+  font-size: 1.3rem;
+  color: #2c3e50;
+}
+
+/* Formulários */
+.form-container {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #eee;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from { 
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.form-input, .form-textarea, .form-select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.form-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Tabelas - Estilos Melhorados */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  table-layout: fixed; /* Garante consistência no layout */
+}
+
+.admin-table th {
+  background-color: #f2f2f2;
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  color: #2c3e50;
+  border-bottom: 2px solid #ddd;
+  position: sticky;
+  top: 0;
+}
+
+.admin-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+  word-wrap: break-word; /* Quebra palavras longas */
+  overflow-wrap: break-word; /* Alternativa para compatibilidade */
+}
+
+/* Colunas específicas para títulos e descrições */
+.admin-table .title-column {
+  width: 25%;
+  min-width: 150px;
+}
+
+.admin-table .description-column {
+  width: 35%;
+  min-width: 200px;
+}
+
+.admin-table .actions-column {
+  width: 15%;
+  min-width: 120px;
+}
+
+.admin-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.admin-table tr.expandable-row {
+  cursor: pointer;
+}
+
+.admin-table tr.expandable-row:hover {
+  background-color: #f0f7ff;
+}
+
+.admin-table .expanded-content {
+  display: none;
+  padding: 1rem;
+  background-color: #fafafa;
+}
+
+.admin-table .expanded-content.active {
+  display: table-row;
+}
+
+.admin-table .expanded-content td {
+  padding: 1rem;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.admin-table ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.admin-table li {
+  margin-bottom: 0.3rem;
+}
+
+/* Botão para expandir/colapsar linhas */
+.toggle-expand {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #3498db;
+  font-size: 0.9rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.toggle-expand:hover {
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+.toggle-expand i {
+  transition: transform 0.2s;
+}
+
+.toggle-expand.active i {
+  transform: rotate(90deg);
+}
+
+/* Botões */
+.btn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn i {
+  font-size: 0.9em;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: white;
+  height: 40px;
+  border-radius: 9px;
+  border:0;
+  padding: 5px 10px;
+}
+
+.btn-primary:hover {
+  background-color: #1e5980;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #95a5a6;
+  color: white;
+  color: white;
+  height: 40px;
+  border-radius: 9px;
+  border:0;
+  padding: 5px 10px;
+}
+
+.btn-secondary:hover {
+  background-color: #7f8c8d;
+}
+
+.btn-success {
+  background-color: #2ecc71;
+  color: white;
     color: white;
-
+  height: 40px;
+  border-radius: 9px;
+  border:0;
+  padding: 5px 10px;
 }
 
-.header-section h1 span {
-    color: #2e7026;
+.btn-success:hover {
+  background-color: #27ae60;
 }
 
-.header-nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 2rem;
-    text-align: center;
+.btn-danger {
+  background-color: #e74c3c;
+  color: white;
+  color: white;
+  height: 40px;
+  border-radius: 9px;
+  border:0;
+  padding: 5px 10px;
 }
-.header-nav h4 {
-    display: flex;
-    gap:3px;
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+.btn-warning {
+  background-color: #f39c12;
+  color: white;
+  color: white;
+  height: 40px;
+  border-radius: 9px;
+  border:0;
+  padding: 5px 10px;
+}
+
+.btn-warning:hover {
+  background-color: #d35400;
+}
+
+.btn-logout {
+  border: 2px solid #30FF14;
+  height: 40px;
+  border-radius: 9px;
+  padding: 5px 10px;
+  color: #30FF14;
+  background-color: black;
+  font-weight: 600;
+  margin-right: 15px;
+  font-size: 1rem;
+}
+
+.btn-logout:hover {
+  background-color: #c0392b;
+}
+
+/* Status Tags */
+.status-tag {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status-pending {
+  background-color: #f1c40f;
+  color: #000;
+}
+
+.status-active {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.status-suspended {
+  background-color: #e74c3c;
+  color: white;
+}
+
+/* Modais */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.modal-content {
+  background-color: white;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  font-size: 1.3rem;
+  color: #2c3e50;
+}
+
+.close-modal {
+  font-size: 1.5rem;
+  color: #7f8c8d;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-modal:hover {
+  color: #e74c3c;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+/* Filtros e Busca */
+.search-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.search-container .form-group {
+  margin-bottom: 0;
+  flex: 1;
+  min-width: 200px;
+}
+
+.search-container button {
+  white-space: nowrap;
+}
+
+/* Links */
+a {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .admin-container {
+    padding: 1rem;
+  }
+  
+  .admin-tabs {
+    flex-wrap: wrap;
+  }
+  
+  .tab-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .search-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .search-container .form-group {
+    width: 100%;
+  }
+  
+  .admin-table {
+    font-size: 0.8rem;
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .admin-table th, 
+  .admin-table td {
+    padding: 0.5rem;
+    white-space: normal;
+  }
+  
+  .admin-table .title-column,
+  .admin-table .description-column,
+  .admin-table .actions-column {
+    width: auto;
+    min-width: 0;
+  }
+  
+  .modal-content {
+    width: 95%;
+    margin: 1rem auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
     justify-content: center;
-
-    
+  }
+  
+  .admin-table {
+    display: block;
+    overflow-x: auto;
+  }
 }
 
-.hero header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-inline: 2rem;
-    align-items: center;
-    margin-left: 1rem;
-    margin-top: 10px;
+/* Estilos para Cards de Curso */
+.courses-grid {
+  display: flex;
+
+  gap: 1.5rem;
+  margin-top: 1rem;
+ 
+  padding: 1rem;
 }
 
-.button-login {
-    border: 2px solid #30FF14;
-    height: 40px;
-    border-radius: 9px;
-    padding: 5px 10px;
-    color: #30FF14;
-    background-color: black;
-    font-weight: 600;
-    margin-right: 15px;
-    font-size: 1rem;
+.curso-card {
+
+  padding: 1rem;
+  
+  transition: transform 0.3s, box-shadow 0.3s;
+
+ max-width: 370px;
+ min-height: 350px;
+ min-width: 370px;
+ max-height: 350px;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+
+
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.3);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.7);
 }
 
-.button-register {
-    border: 2px solid #30FF14;
-    height: 40px;
-    border-radius: 9px;
-    padding: 5px 10px;
-    color: black;
-    background-color: #30FF14;
-    font-weight: 600;
-    margin-right: 15px;
-    font-size: 1rem;
+
+.curso-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.BannerComum{
-    margin-inline: auto;
-      opacity: 0;
-  transform: translateX(-100%);
-  animation: entrarLateral 1s ease-out forwards;
+.curso-card h3 {
+  color: white;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.curso-card p {
+  color: whitesmoke;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  min-height: 60px;
+    word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.curso-main{
+display:flex;
+flex-direction: column;
+justify-content: flex-start;
+
+
+}
+.curso-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  bottom: 0;
+}
+
+.curso-status {
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.curso-status.active {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.curso-status.pending {
+  background-color: #f1c40f;
+  color: #000;
+}
+
+.curso-status.available {
+  background-color: #3498db;
+  color: white;
+}
+
+.curso-status.suspended {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.curso-status i.fa-info-circle {
+  margin-left: 0.3rem;
+  cursor: pointer;
+}
+
+.no-courses {
+  text-align: center;
+  padding: 2rem;
+  color: #7f8c8d;
+  grid-column: 1 / -1;
+}
+
+/* Botão de Ajuda nas Aulas */
+.btn-help {
+  background-color: #25D366;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  text-decoration: none;
+}
+
+.btn-help:hover {
+  background-color: #128C7E;
+}
+
+
+
+
+
+.btn-suporte {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: transform 0.2s ease;
+  display: none;
+}
+.btn-suporte:hover {
+transform: translateY(-10px);
+}
+
+.btn-suporte::after {
+  content: 'Suporte';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.btn-suporte::before {
+  content: '';
+  position: absolute;
+  bottom: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #333;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.btn-suporte:hover::after,
+.btn-suporte:hover::before {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+/* Ajustes para o modal de cronograma */
+.schedule-table {
+  width: 100%;
+  margin-top: 1rem;
+  table-layout: fixed;
+}
+
+.schedule-table th {
+  text-align: left;
+  padding: 0.75rem;
+  background-color: #f2f2f2;
+}
+
+.schedule-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+  word-wrap: break-word;
+}
+
+/* Status tags */
+.status-tag {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status-upcoming {
+  background-color: #f1c40f;
+  color: #000;
+}
+
+.status-recorded {
+  background-color: #2ecc71;
+  color: white;
+}
+
+/* estilização mobile*/
+.student-header{
+  background-color:black ;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+  height: 100px;
+  align-items: center;
 
 }
 
 .faixa-container {
-  width: 100%;
+  width: 95%;
   overflow: hidden;
-  background-color: #30FF14;
   color: black;
   font-size: 1.5rem;
   font-weight: bold;
   padding: 10px 0;
   white-space: nowrap;
   position: relative;
+  text-align: center;
+  margin-inline: auto;
+
+   font-family: "Orbitron", sans-serif;
+
+  /* From https://css.glass */
+background: rgba(48, 255, 20, 0.81);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(4.3px);
+-webkit-backdrop-filter: blur(4.3px);
+border: 1px solid rgba(48, 255, 20, 0.83);
 }
 
 .faixa-conteudo {
@@ -141,103 +862,102 @@
   }
 }
 
+.student-card{
 
-.oferecemos-section{
+  color: #30FF14;
+  padding: 10px;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .courses-grid {
     display: flex;
-    flex-direction: row;
-      padding:  2rem;
-      margin-block: 2rem 5rem;
-    
-
-}
-.oferecemos-section aside{
-   padding: 1rem;
-   margin: 0.5rem;
-   border-radius: 15px;
-    
-
-}
-.oferecemos-section div{
-    display: flex;
-    
-
-}
-
-.oferecemos-section div article{
-   background-color: black;
-   color: white;
-   padding: 1rem;
-   margin: 0.5rem;
-   border-radius: 15px;
-
-}
-.prepare-section{
-    display: flex;
-    flex-direction: row;
-    background-color: #30FF14;
-    padding: 3rem 3rem 0 3rem;
-justify-content: space-evenly;
-}
-
-.prepare-section aside div {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 2rem;
-}
-.prepare-section aside div article {
-justify-content: center;
-text-align: center;
-}
-
-.BannerUerj{
-margin-top:-7rem ;
-
-}
-
-
-@media (max-width: 780px) {
-    .container {
-        flex-direction: column;
-        padding: 10px;
-        align-items: center;
-        text-align: center;
-    }
-    .BannerComum{
-    width: 350px;
-
-}
-.BannerUerj{
-margin-top:-5rem ;
-
-}
-.button-inscreva{
-    width: 250px;
-    margin-bottom: 1rem;
-     cursor: pointer;
-  animation: pulsar 1.5s ease-in-out infinite;
-  transition: background-color 0.3s ease;
-
-}
-.button-inscreva:hover {
-  background-color: #24c10f;
-}
-@keyframes pulsar {
-  0% {
-    transform: scale(1);
+   
+    flex-direction: column;
   }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
+  
+  .btn-suporte-flutuante {
+    bottom: 1rem;
+    right: 1rem;
+    width: 50px;
+    height: 50px;
   }
 }
+
+/* Estilo para mensagem de suspensão */
+.alert {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-
-@keyframes entrarLateral {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+.alert-warning {
+  background-color: #fff3cd;
+  color: #856404;
+  border-left: 4px solid #ffc107;
 }
+
+.alert i {
+  font-size: 1.2rem;
+}
+
+/* Estilo para botões desabilitados */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Classes adicionais para tabelas responsivas */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1.5rem;
+}
+
+.table-caption {
+  caption-side: top;
+  padding: 0.75rem;
+  font-weight: bold;
+  text-align: left;
+  background-color: #f2f2f2;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Efeito de zebrado para melhor legibilidade */
+.admin-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Melhorias para células com conteúdo longo */
+.long-text-cell {
+  max-height: 100px;
+  overflow-y: auto;
+  display: block;
+}
+
+/* Tooltip para texto truncado */
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+}
+
+.truncate:hover::after {
+  content: attr(data-fulltext);
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: #333;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  z-index: 100;
+  white-space: normal;
+  width: 200px;
+}
+

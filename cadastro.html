@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Cadastro</h1>
+  <input type="text" id="nome" placeholder="Nome completo" />
+  <input type="email" id="email" placeholder="Email" />
+  <input type="password" id="senha" placeholder="Senha" />
+  <select id="tipo">
+    <option value="aluno">Aluno</option>
+    <option value="admin">Diretor</option>
+  </select>
+  <button onclick="cadastrar()">Cadastrar</button>
+  <p>Já tem conta? <a href="login.html">Faça login</a></p>
+
+  <script type="module" src="cadastro.js"></script>
+</body>
+</html>

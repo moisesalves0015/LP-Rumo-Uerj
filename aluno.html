@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+</html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8" />
+  <title>Dashboard do Aluno</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="aluno.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="student-header">
+    <img onclick="window.location.href='index.html'" class="logo" src="./assets/imgs/Logo.svg" alt="">      
+
+    <button onclick="logoutAluno()" class="btn-logout">Sair <i class="fas fa-sign-out-alt"></i></button>
+
+
+  </div>
+  <div class="body-aluno">
+    
+
+    <div class="faixa-container">
+ 
+      <div class="faixa-conteudo">
+
+        <span>📚 Bem-vindo(a) de volta ao Rumo à UERJ! Continue firme nos estudos! 💪&nbsp;&nbsp;&nbsp;</span>
+        <span>🎓 Você está mais perto da UERJ a cada dia. Não pare agora! 🔥&nbsp;&nbsp;&nbsp;</span>
+
+      </div>
+    </div>
+
+    <h3 class="frase-welcome">Olá, <span id="alunoNome"></span>, <br>bem vindo(a) ao nosso cronograma </h3>
+
+
+    <div class="student-container">
+      <!-- Card de Cursos Aprovados -->
+      <div class="student-card">
+        <h2><i class="fas fa-book-open"></i> Meus Cursos</h2>
+        <div id="cursosAprovadosList" class="courses-grid"></div>
+      </div>
+
+      <!-- Card de Cursos Disponíveis -->
+      <div class="student-card">
+        <h2><i class="fas fa-search"></i> Cursos Disponíveis</h2>
+        <div id="cursosLista" class="courses-grid"></div>
+      </div>
+    </div>
+
+    <!-- Modal de Cronograma -->
+    <div id="cronogramaModal" class="modal">
+      <div class="modal-content">
+        <div>
+          <span class="close-modal" onclick="fecharModal()">&times;</span>
+          <h2 id="modalCursoTitulo"></h2>
+        </div>
+        <table id="cronogramaModalList" class="schedule-table">
+          <thead>
+            <tr>
+              <th>Aula</th>
+              <th>Data/Hora</th>
+              <th>Status</th>
+              <th>Ações</th>
+              <th>Ajuda</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="ajuda-flutuante">
+
+  <ul class="menu-ajuda">
+    <li><a href="mailto:matricula@vestibular.com">📝 Matrícula e Inscrição</a></li>
+    <li><a href="mailto:provas@vestibular.com">🧪 Provas e Simulados</a></li>
+    <li><a href="mailto:monitor@vestibular.com">👨‍🏫 Chat com Monitor</a></li>
+    <li><a href="mailto:financeiro@vestibular.com">💰 Pagamentos e Boletos</a></li>
+    <li><a href="mailto:suporte@vestibular.com">🛠 Suporte Técnico</a></li>
+  </ul>
+    <button id="botao-ajuda">
+    <img src="./assets/imgs/andresuporte.svg" alt="Ajuda">
+  </button>
+</div>
+
+  <script type="module" src="aluno.js"></script>
+  <script>
+  const botaoAjuda = document.getElementById("botao-ajuda");
+  const menuAjuda = document.querySelector(".menu-ajuda");
+
+  botaoAjuda.addEventListener("click", () => {
+    menuAjuda.style.display = menuAjuda.style.display === "flex" ? "none" : "flex";
+  });
+
+  // Fecha o menu se clicar fora
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".ajuda-flutuante")) {
+      menuAjuda.style.display = "none";
+    }
+  });
+</script>
+
+</body>
+
+</html>

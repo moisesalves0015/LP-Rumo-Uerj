@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+
+.logo{
+  height: 70px;
+}
+
+
+
+/* Modal do Cronograma - Versão Responsiva */
+.modal-content {
+  
+  margin: 1rem;
+  width: calc(100% - 2rem);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation: modalFadeIn 0.3s;
+  margin-inline: auto;
+
+
+  /* From https://css.glass */
+background: rgba(19, 19, 19, 0.56);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(9px);
+-webkit-backdrop-filter: blur(9px);
+border: 1px solid rgba(19, 19, 19, 0.58);
+}
+
+#modalCursoTitulo {
+  padding: 1rem;
+ 
+  margin: 0;
+  font-size: 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(48, 255, 20, 0.81);
+border-radius: 16px 16px 0 0 ;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(4.3px);
+-webkit-backdrop-filter: blur(4.3px);
+border: 1px solid rgba(48, 255, 20, 0.83);
+
+  
+}
+
+.schedule-table-container {
+  overflow-x: auto;
+  padding: 0 1rem;
+  max-height: 70vh;
+  -webkit-overflow-scrolling: touch;
+}
+
+.schedule-table {
+  width: 100%;
+  min-width: 600px; /* Largura mínima para manter legibilidade */
+  border-collapse: collapse;
+}
+
+.schedule-table th, 
+.schedule-table td {
+  padding: 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+.schedule-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #555;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.schedule-table tr {
+  transition: background-color 0.2s;
+  background-color: white;
+}
+
+.schedule-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Versão mobile - transforma a tabela em cards */
+@media (max-width: 767px) {
+  .schedule-table {
+    display: block;
+    min-width: 100%;
+  }
+  
+  .schedule-table thead {
+    display: none;
+  }
+  
+  .schedule-table tbody,
+  .schedule-table tr,
+  .schedule-table td {
+    display: block;
+    width: 90%;
+    margin-inline: auto;
+  }
+  
+  .schedule-table tr {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0.5rem;
+    position: relative;
+margin-inline: auto;
+  }
+  
+  .schedule-table td {
+    padding: 0.5rem 0.5rem 0.5rem;
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+  }
+  
+  .schedule-table td:last-child {
+    border-bottom: none;
+  }
+  
+  .schedule-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+    width: 35%;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #666;
+  }
+  
+  .schedule-table td:first-child {
+    padding-top: 1rem;
+  }
+  
+  .schedule-table td:last-child {
+    padding-bottom: 1rem;
+  }
+  
+  /* Ajuste para os botões no mobile */
+  .schedule-table .btn-primary,
+  .schedule-table .btn-help {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0.3rem 0;
+  }
+}
+
+/* Status tags - versão mobile */
+.status-tag {
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.status-upcoming {
+  background-color: #e2f0fd;
+  color: #0d6efd;
+}
+
+.status-recorded {
+  background-color: #e7f6e7;
+  color: #198754;
+}
+
+/* Botão de fechar no mobile */
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+  z-index: 20;
+  background: rgba(0,0,0,0.2);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+padding-bottom: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+.ajuda-flutuante {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+
+
+  
+}
+
+#botao-ajuda {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#botao-ajuda:hover {
+  transform: translateY(-5px);
+}
+
+.menu-ajuda {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  background: #fff;
+  border-radius: 8px;
+
+
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+ 
+
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.3);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.menu-ajuda li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
+}
+
+.menu-ajuda li:last-child a {
+  border-bottom: none;
+}
+
+.menu-ajuda li a:hover {
+  background: rgba(48, 255, 20, 0.81);
+
+
+backdrop-filter: blur(4.3px);
+-webkit-backdrop-filter: blur(4.3px);
+
+}

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rumo à Uerj</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styleLP.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,8 +18,8 @@
 <body class="">
   <section class="hero">
     <header>
-      <div><img src="./assets/imgs/Logo.svg" alt=""></div>
-      <div><button class="button-login">Acessar</button><button class="button-register">Cadastrar</button></div>
+      <div><img class="logo" src="./assets/imgs/Logo.svg" alt=""></div>
+      <div><button onclick="window.location.href='aluno.html'" class="button-register">Cronograma</button></div>
 
     </header>
     <div class="header-section container">
@@ -44,6 +44,7 @@
       <span>📢 Inscrições abertas para o Rumo à UERJ! 🚀 Estude com quem mais aprova! &nbsp;&nbsp;&nbsp;</span>
     </div>
   </div>
+ 
 
   <section class="oferecemos-section container">
 
@@ -71,6 +72,12 @@
         <p>Explore conteúdos interativos que despertam sua curiosidade. Estudar se torna algo leve, dinâmico e focado no
           que você precisa.</p>
       </article>
+            <article>
+        <img src="./assets/icons/IconAprendizagem.svg" alt="">
+        <h2>Aprendizado Interessante</h2>
+        <p>Explore conteúdos interativos que despertam sua curiosidade. Estudar se torna algo leve, dinâmico e focado no
+          que você precisa.</p>
+      </article>
 
     </div>
   </section>
@@ -80,14 +87,188 @@
     <aside>
       <p>ESCOLHA SEU CURSO</p>
       <h2>SE PREPARE PARA UERJ</h2>
-      <p>Oferecemos conteúdos e apoio para quem<br> quer conquistar a vaga na UERJ. <br>Caminhe com a gente rumo à universidade!</p>
+      <p>Oferecemos conteúdos e apoio para quem<br> quer conquistar a vaga na UERJ. <br>Caminhe com a gente rumo à
+        universidade!</p>
       <div class="">
-        <article><h2>6,000</h2><P>Visualizações</P></article>
-        <article><h2>4,000</h2><P>Alunos</P></article>
-        <article><h2>100</h2><P>Cursos</P></article>
+        <article>
+          <h2>6,000</h2>
+          <P>Visualizações</P>
+        </article>
+        <article>
+          <h2>4,000</h2>
+          <P>Alunos</P>
+        </article>
+        <article>
+          <h2>100</h2>
+          <P>Cursos</P>
+        </article>
 
       </div>
     </aside>
+
+  </section>
+ 
+
+
+
+  <section class="courses-section">
+    <div class="cursos-container">
+      <!-- Card 1 -->
+      <div class="curso-card-moderno">
+        <div class="curso-badge">MAIS POPULAR</div>
+
+        <div class="curso-header-moderno" >
+          <span class="curso-categoria">REDAÇÃO UERJ</span>
+          <h3 class="curso-titulo">Domine a Redação no Modelo UERJ</h3>
+        </div>
+
+        <div class="curso-content">
+          <div class="professor-info">
+            <div class="professor-avatar">
+              <img src="https://i.imgur.com/J6l19lX.jpg" alt="Professora André Rosário">
+            </div>
+            <div class="professor-details">
+              <span class="professor-nome">Profª André Rosário</span>
+              <span class="professor-especialidade">Especialista em Literatura</span>
+            </div>
+          </div>
+
+          <p class="curso-descricao">
+            Curso completo com técnicas de redação para o vestibular da UERJ,
+            análise das obras obrigatórias e correções personalizadas.
+          </p>
+
+          <div class="curso-meta">
+            <span class="meta-item"><i class="fas fa-clock"></i> 40 horas</span>
+            <span class="meta-item"><i class="fas fa-users"></i> Turma 2026</span>
+            <span class="meta-item"><i class="fas fa-star"></i> 4.9 (128)</span>
+          </div>
+        </div>
+
+        <div class="curso-footer-moderno">
+          <button class="btn-inscrever">Inscreva-se agora</button>
+          <button class="btn-detalhes">Detalhes <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="curso-card-moderno">
+        <div class="curso-badge" style="background-color: #f72585;">LANÇAMENTO</div>
+
+        <div class="curso-header-moderno" >
+          <span class="curso-categoria">MATEMÁTICA</span>
+          <h3 class="curso-titulo">Matemática para o ENEM 2026</h3>
+        </div>
+
+        <div class="curso-content">
+          <div class="professor-info">
+            <div class="professor-avatar">
+              <img src="https://i.imgur.com/mW5hQnv.jpg" alt="Professor Carlos Silva">
+            </div>
+            <div class="professor-details">
+              <span class="professor-nome">Prof. Carlos Silva</span>
+              <span class="professor-especialidade">Mestre em Matemática</span>
+            </div>
+          </div>
+
+          <p class="curso-descricao">
+            Domine os principais tópicos de matemática do ENEM com resolução de
+            exercícios e dicas para otimizar seu tempo na prova.
+          </p>
+
+          <div class="curso-meta">
+            <span class="meta-item"><i class="fas fa-clock"></i> 60 horas</span>
+            <span class="meta-item"><i class="fas fa-users"></i> Turma 2026</span>
+            <span class="meta-item"><i class="fas fa-star"></i> 4.8 (95)</span>
+          </div>
+        </div>
+
+        <div class="curso-footer-moderno">
+          <button class="btn-inscrever" style="background: #7209b7;">Inscreva-se agora</button>
+          <button class="btn-detalhes" style="color: #7209b7;">Detalhes <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="curso-card-moderno">
+        <div class="curso-badge" style="background-color: #4cc9f0;">OFERTA</div>
+
+        <div class="curso-header-moderno" >
+          <span class="curso-categoria">BIOLOGIA</span>
+          <h3 class="curso-titulo">Biologia Molecular Avançada</h3>
+        </div>
+
+        <div class="curso-content">
+          <div class="professor-info">
+            <div class="professor-avatar">
+              <img src="https://i.imgur.com/y9EZS5j.jpg" alt="Professora Mariana Costa">
+            </div>
+            <div class="professor-details">
+              <span class="professor-nome">Profª Mariana Costa</span>
+              <span class="professor-especialidade">Doutora em Biologia</span>
+            </div>
+          </div>
+
+          <p class="curso-descricao">
+            Aprofunde seus conhecimentos em biologia molecular com aulas
+            teóricas e práticas para vestibulares de alta concorrência.
+          </p>
+
+          <div class="curso-meta">
+            <span class="meta-item"><i class="fas fa-clock"></i> 35 horas</span>
+            <span class="meta-item"><i class="fas fa-users"></i> Turma 2026</span>
+            <span class="meta-item"><i class="fas fa-star"></i> 4.7 (76)</span>
+          </div>
+        </div>
+
+        <div class="curso-footer-moderno">
+          <button class="btn-inscrever" style="background: #4895ef;">Inscreva-se agora</button>
+          <button class="btn-detalhes" style="color: #4895ef;">Detalhes <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="curso-card-moderno">
+        <div class="curso-badge" style="background-color: #3a0ca3;">VIP</div>
+
+        <div class="curso-header-moderno" >
+          <span class="curso-categoria">HISTÓRIA</span>
+          <h3 class="curso-titulo">História do Brasil - Foco ENEM</h3>
+        </div>
+
+        <div class="curso-content">
+          <div class="professor-info">
+            <div class="professor-avatar">
+              <img src="https://i.imgur.com/v7UQ0Xp.jpg" alt="Professor João Mendes">
+            </div>
+            <div class="professor-details">
+              <span class="professor-nome">Prof. João Mendes</span>
+              <span class="professor-especialidade">Historiador</span>
+            </div>
+          </div>
+
+          <p class="curso-descricao">
+            Curso completo de História do Brasil com abordagem nos temas
+            mais recorrentes no ENEM e principais vestibulares do país.
+          </p>
+
+          <div class="curso-meta">
+            <span class="meta-item"><i class="fas fa-clock"></i> 45 horas</span>
+            <span class="meta-item"><i class="fas fa-users"></i> Turma 2026</span>
+            <span class="meta-item"><i class="fas fa-star"></i> 4.9 (112)</span>
+          </div>
+        </div>
+
+        <div class="curso-footer-moderno">
+          <button class="btn-inscrever" style="background: #3a0ca3;">Inscreva-se agora</button>
+          <button class="btn-detalhes" style="color: #3a0ca3;">Detalhes <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <button class="button-register">Ver Todos</button>
+    </div>
 
   </section>
 

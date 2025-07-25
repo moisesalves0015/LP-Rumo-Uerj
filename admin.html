@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  
+  <meta charset="UTF-8" />
+  <title>Painel de Administração</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="admin-header">
+    <h1 id="adminNome">Bem-vindo, Administrador</h1>
+    <button onclick="window.logoutAdmin()" class="btn-logout">Sair <i class="fas fa-sign-out-alt"></i></button>
+  </div>
+
+  <div class="admin-container">
+    <!-- Abas de navegação -->
+    <div class="admin-tabs">
+      <button class="tab-btn active" data-tab="cursos">Cursos</button>
+      <button class="tab-btn" data-tab="professores">Professores</button>
+      <button class="tab-btn" data-tab="alunos">Alunos</button>
+    </div>
+
+    <!-- Conteúdo das abas -->
+    <div class="tab-content">
+      <!-- Aba Cursos -->
+      <div id="cursos-tab" class="tab-pane active">
+        <div class="admin-card">
+          <div class="card-header">
+            <h2>Gerenciamento de Cursos</h2>
+            <button id="btnNovoCurso" class="btn-primary">
+              <i class="fas fa-plus"></i> Criar Novo Curso
+            </button>
+          </div>
+
+          <form id="formNovoCurso" class="form-container" style="display: none;" onsubmit="event.preventDefault(); criarCurso();">
+            <h3>Criar Novo Curso</h3>
+            <div class="form-group">
+              <label for="nomeNovoCurso">Nome do Curso*</label>
+              <input type="text" id="nomeNovoCurso" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label for="descricaoNovoCurso">Descrição*</label>
+              <textarea id="descricaoNovoCurso" class="form-textarea" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="professorCurso">Professor*</label>
+              <select id="professorCurso" class="form-input" required>
+                <option value="">Selecione um professor</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="cargaHorariaCurso">Carga Horária (horas)*</label>
+              <input type="number" id="cargaHorariaCurso" class="form-input" min="1" required>
+            </div>
+            <div class="form-group">
+              <label for="valorCurso">Valor (R$)*</label>
+              <input type="number" id="valorCurso" class="form-input" step="0.01" min="0" required>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-primary">Salvar Curso</button>
+              <button type="button" onclick="document.getElementById('formNovoCurso').style.display='none'" class="btn-secondary">Cancelar</button>
+            </div>
+          </form>
+
+          <div class="courses-list">
+            <h3>Cursos Cadastrados</h3>
+            <table id="listaCursos" class="admin-table">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Professor</th>
+                  <th>Carga Horária</th>
+                  <th>Valor</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="admin-card">
+          <h2>Solicitações de Inscrição em Cursos</h2>
+          <table id="listaSolicitacoesCursos" class="admin-table">
+            <thead>
+              <tr>
+                <th>Aluno</th>
+                <th>Curso</th>
+                <th>Status</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Aba Professores -->
+      <div id="professores-tab" class="tab-pane">
+        <div class="admin-card">
+          <div class="card-header">
+            <h2>Gerenciamento de Professores</h2>
+            <button id="btnNovoProfessor" class="btn-primary">
+              <i class="fas fa-plus"></i> Adicionar Professor
+            </button>
+          </div>
+
+          <form id="formNovoProfessor" class="form-container" style="display: none;">
+            <h3>Cadastrar Novo Professor</h3>
+            <div class="form-group">
+              <label for="nomeProfessor">Nome Completo</label>
+              <input type="text" id="nomeProfessor" placeholder="Nome do Professor" class="form-input" />
+            </div>
+            <div class="form-group">
+              <label for="emailProfessor">E-mail</label>
+              <input type="email" id="emailProfessor" placeholder="E-mail do Professor" class="form-input" />
+            </div>
+            <div class="form-group">
+              <label for="whatsappProfessor">WhatsApp</label>
+              <input type="tel" id="whatsappProfessor" placeholder="(99) 99999-9999" class="form-input" />
+            </div>
+            <div class="form-group">
+              <label for="especialidadeProfessor">Especialidade</label>
+              <input type="text" id="especialidadeProfessor" placeholder="Área de atuação" class="form-input" />
+            </div>
+            <div class="form-actions">
+              <button onclick="window.criarProfessor()" class="btn-primary">Salvar Professor</button>
+              <button onclick="document.getElementById('formNovoProfessor').style.display='none'" class="btn-secondary">Cancelar</button>
+            </div>
+          </form>
+
+          <div class="professores-list">
+            <h3>Professores Cadastrados</h3>
+            <table id="listaProfessores" class="admin-table">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>E-mail</th>
+                  <th>WhatsApp</th>
+                  <th>Especialidade</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aba Alunos -->
+      <div id="alunos-tab" class="tab-pane">
+        <div class="admin-card">
+          <h2>Gerenciamento de Alunos</h2>
+          
+          <div class="search-container">
+            <div class="form-group" style="flex-grow: 1; margin-bottom: 0;">
+              <input type="text" id="buscaAlunoNome" placeholder="Digite o nome do aluno..." class="form-input">
+            </div>
+            <div class="form-group" style="margin-right: 10px;">
+              <select id="filtroStatusAluno" class="form-input" onchange="carregarAlunos()">
+                <option value="todos">Todos</option>
+                <option value="ativo">Ativos</option>
+                <option value="suspenso">Suspensos</option>
+              </select>
+            </div>
+            <button onclick="buscarAlunosPorNome()" class="btn-primary">
+              <i class="fas fa-search"></i> Buscar
+            </button>
+            <button onclick="limparBuscaAlunos()" class="btn-secondary">
+              <i class="fas fa-times"></i> Limpar
+            </button>
+          </div>
+
+          <div class="alunos-list">
+            <table id="listaAlunos" class="admin-table">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>E-mail</th>
+                  <th>WhatsApp</th>
+                  <th>Status</th>
+                  <th>Cursos Inscritos</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para Gerenciamento de Cronograma -->
+  <div id="modalCronograma" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Gerenciar Cronograma: <span id="cursoSelecionadoCronograma"></span></h2>
+        <span class="close-modal" onclick="window.fecharModal()">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <h3>Adicionar Nova Aula</h3>
+          <div class="form-group">
+            <label for="tituloAula">Título da Aula</label>
+            <input type="text" id="tituloAula" placeholder="Título da Aula" class="form-input" />
+          </div>
+          <div class="form-group">
+            <label for="professorAula">Professor</label>
+            <select id="professorAula" class="form-input">
+              <option value="">Selecione o professor</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="dataAula">Data e Hora</label>
+            <input type="datetime-local" id="dataAula" class="form-input" />
+          </div>
+          <div class="form-group">
+            <label for="linkGravacao">Link da Gravação (opcional)</label>
+            <input type="url" id="linkGravacao" placeholder="https://..." class="form-input" />
+          </div>
+          <div class="form-group">
+            <label for="linkAoVivo">Link da Aula Ao Vivo (opcional)</label>
+            <input type="url" id="linkAoVivo" placeholder="https://..." class="form-input" />
+          </div>
+          <button onclick="window.salvarAula()" class="btn-primary" id="salvarAulaBtn">Adicionar Aula</button>
+        </div>
+
+        <div class="schedule-list">
+          <h3>Aulas Programadas</h3>
+          <table id="listaAulasCronograma" class="admin-table">
+            <thead>
+              <tr>
+                <th>Título</th>
+                <th>Professor</th>
+                <th>Data/Hora</th>
+                <th>Links</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para Edição de Curso -->
+  <div id="modalEditarCurso" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Editar Curso</h2>
+        <span class="close-modal" onclick="window.fecharModal()">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="editarNomeCurso">Nome do Curso</label>
+          <input type="text" id="editarNomeCurso" class="form-input" />
+        </div>
+        <div class="form-group">
+          <label for="editarDescricaoCurso">Descrição</label>
+          <textarea id="editarDescricaoCurso" class="form-textarea"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="editarProfessorCurso">Professor</label>
+          <select id="editarProfessorCurso" class="form-input">
+            <option value="">Selecione um professor</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="editarCargaHoraria">Carga Horária (horas)</label>
+          <input type="number" id="editarCargaHoraria" class="form-input" />
+        </div>
+        <div class="form-group">
+          <label for="editarValorCurso">Valor (R$)</label>
+          <input type="number" step="0.01" id="editarValorCurso" class="form-input" />
+        </div>
+        <div class="form-actions">
+          <button onclick="window.salvarEdicaoCurso()" class="btn-primary">Salvar Alterações</button>
+          <button onclick="window.fecharModal()" class="btn-secondary">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <!-- Modal para Edição de Professor -->
+<div id="modalEditarProfessor" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Editar Professor</h2>
+      <span class="close-modal" onclick="window.fecharModal()">&times;</span>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label for="editarNomeProfessor">Nome Completo*</label>
+        <input type="text" id="editarNomeProfessor" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <label for="editarEmailProfessor">E-mail*</label>
+        <input type="email" id="editarEmailProfessor" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <label for="editarWhatsappProfessor">WhatsApp</label>
+        <input type="tel" id="editarWhatsappProfessor" class="form-input">
+      </div>
+      <div class="form-group">
+        <label for="editarEspecialidadeProfessor">Especialidade</label>
+        <input type="text" id="editarEspecialidadeProfessor" class="form-input">
+      </div>
+      <div class="form-actions">
+        <button onclick="window.salvarEdicaoProfessor()" class="btn-primary">Salvar Alterações</button>
+        <button onclick="window.fecharModal()" class="btn-secondary">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Modal para Gerenciar Cursos do Aluno -->
+  <div id="modalAlunoCursos" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Gerenciar Cursos do Aluno: <span id="alunoSelecionadoNome"></span></h2>
+        <span class="close-modal" onclick="window.fecharModal()">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <h3>Adicionar Curso</h3>
+          <select id="selectCursoParaAluno" class="form-input">
+            <option value="">Selecione um curso</option>
+          </select>
+          <button onclick="window.adicionarCursoAluno()" class="btn-primary">Adicionar Curso</button>
+        </div>
+
+        <div class="aluno-cursos-list">
+          <h3>Cursos Inscritos</h3>
+          <table id="listaCursosAluno" class="admin-table">
+            <thead>
+              <tr>
+                <th>Curso</th>
+                <th>Status</th>
+                <th>Data Inscrição</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
