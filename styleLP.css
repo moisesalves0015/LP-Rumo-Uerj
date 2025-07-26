@@ -2,14 +2,15 @@
   margin: 0;
   font-family: "Poppins", sans-serif;
 }
-.logo{
+
+.logo {
   height: 70px;
 }
 
 .hero {
   width: 100%;
 
-background-image: url(./assets/imgs/11540.jpg);
+  background-image: url(./assets/imgs/11540.jpg);
   display: flex;
   flex-direction: column;
 
@@ -132,17 +133,17 @@ background-image: url(./assets/imgs/11540.jpg);
   text-align: center;
   margin-inline: auto;
 
-   font-family: "Orbitron", sans-serif;
+  font-family: "Orbitron", sans-serif;
 
   /* From https://css.glass */
-background: rgba(48, 255, 20, 0.81);
+  background: rgba(48, 255, 20, 0.81);
 
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(4.3px);
--webkit-backdrop-filter: blur(4.3px);
-border: 1px solid rgba(48, 255, 20, 0.83);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.3px);
+  -webkit-backdrop-filter: blur(4.3px);
+  border: 1px solid rgba(48, 255, 20, 0.83);
 
-  
+
 }
 
 .faixa-conteudo {
@@ -166,7 +167,7 @@ border: 1px solid rgba(48, 255, 20, 0.83);
   display: flex;
   flex-direction: row;
   padding: 2rem;
-  margin-block: 2rem 5rem;
+  margin-block: 2rem 6rem;
 
 
 }
@@ -206,16 +207,16 @@ border: 1px solid rgba(48, 255, 20, 0.83);
   position: relative;
   text-align: center;
   margin-inline: auto;
-width: 95%;
-   font-family: "Orbitron", sans-serif;
+  width: 100%;
+  font-family: "Orbitron", sans-serif;
 
   /* From https://css.glass */
-background: rgba(48, 255, 20, 0.81);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(4.3px);
--webkit-backdrop-filter: blur(4.3px);
-border: 1px solid rgba(48, 255, 20, 0.83);
+  background: rgba(48, 255, 20, 0.81);
+
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.3px);
+  -webkit-backdrop-filter: blur(4.3px);
+  border: 1px solid rgba(48, 255, 20, 0.83);
 
 }
 
@@ -236,22 +237,21 @@ border: 1px solid rgba(48, 255, 20, 0.83);
 }
 
 .courses-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2rem;
+
+  width: 100%;
 
 
 }
-.curso-header-moderno{
 
-    /* From https://css.glass */
-background: rgba(48, 255, 20, 0.81);
+.curso-header-moderno {
 
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(4.3px);
--webkit-backdrop-filter: blur(4.3px);
-border: 1px solid rgba(48, 255, 20, 0.83);
+  /* From https://css.glass */
+  background: rgba(48, 255, 20, 0.81);
+
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.3px);
+  -webkit-backdrop-filter: blur(4.3px);
+  border: 1px solid rgba(48, 255, 20, 0.83);
 }
 
 
@@ -289,18 +289,20 @@ border: 1px solid rgba(48, 255, 20, 0.83);
 
 /* Container principal */
 .cursos-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  width: 100%;
+  display: flex;
+  padding-block: 5rem;
+  flex-wrap: wrap;
   gap: 25px;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: black;
+justify-content: center;
+  margin-inline: auto;
+
+  background-image: url(./assets/imgs/11540.jpg);
 }
 
 /* Card de curso */
 .curso-card-moderno {
-  width: 100%;
+  width: 350px;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -326,11 +328,15 @@ border: 1px solid rgba(48, 255, 20, 0.83);
   font-size: 12px;
   font-weight: 700;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
 }
 
 /* Header */
 .curso-header-moderno {
-  color: white;
+  color: black;
   padding: 25px 20px;
   position: relative;
 }
@@ -366,6 +372,7 @@ border: 1px solid rgba(48, 255, 20, 0.83);
 /* Content */
 .curso-content {
   padding: 30px 20px 20px;
+
 }
 
 .professor-info {
@@ -437,6 +444,7 @@ border: 1px solid rgba(48, 255, 20, 0.83);
   display: flex;
   border-top: 1px solid #eee;
   padding: 15px 20px;
+  bottom: 0px;
 }
 
 .btn-inscrever {
@@ -484,7 +492,7 @@ border: 1px solid rgba(48, 255, 20, 0.83);
   .cursos-container {
     grid-template-columns: 1fr;
   }
-  
+
   .curso-card-moderno {
     max-width: 100%;
   }
@@ -540,7 +548,7 @@ border: 1px solid rgba(48, 255, 20, 0.83);
     padding: 10px;
     align-items: center;
     text-align: center;
-   
+
 
 
   }
@@ -596,26 +604,33 @@ border: 1px solid rgba(48, 255, 20, 0.83);
 .admin-table {
   width: 100%;
   border-collapse: collapse;
-  table-layout: fixed; /* Isso é essencial */
+  table-layout: fixed;
+  /* Isso é essencial */
 }
 
-.admin-table td, .admin-table th {
+.admin-table td,
+.admin-table th {
   padding: 0.75rem;
   border: 1px solid #eee;
-  word-break: break-word; /* Quebra palavras longas */
-  overflow-wrap: anywhere; /* Mais eficiente que break-word */
-  hyphens: auto; /* Adiciona hífens quando necessário */
+  word-break: break-word;
+  /* Quebra palavras longas */
+  overflow-wrap: anywhere;
+  /* Mais eficiente que break-word */
+  hyphens: auto;
+  /* Adiciona hífens quando necessário */
 }
 
 /* Define larguras padrão para colunas baseadas na posição */
 .admin-table th:nth-child(1),
 .admin-table td:nth-child(1) {
-  width: 20%; /* Para coluna de título */
+  width: 20%;
+  /* Para coluna de título */
 }
 
 .admin-table th:nth-child(2),
 .admin-table td:nth-child(2) {
-  width: 20%; /* Para coluna de descrição */
+  width: 20%;
+  /* Para coluna de descrição */
 }
 
 /* As demais colunas dividem o espaço restante */
@@ -630,8 +645,3 @@ border: 1px solid rgba(48, 255, 20, 0.83);
   max-height: 100px;
   overflow-y: auto;
 }
-
-
-
-
-
