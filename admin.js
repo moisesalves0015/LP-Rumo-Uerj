@@ -452,6 +452,7 @@ async function carregarCronogramaDoCurso(cursoId) {
   }
 }
 
+
 window.salvarAula = async function() {
   if (!cursoSelecionadoParaCronograma) return;
 

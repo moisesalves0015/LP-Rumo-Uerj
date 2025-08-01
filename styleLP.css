@@ -10,9 +10,10 @@
 .hero {
   width: 100%;
 
-  background-image: url(./assets/imgs/11540.jpg);
-  display: flex;
+  background-image: url(./assets/imgs/abstratos-techno-fundo-ligar-linhas.jpg);
   flex-direction: column;
+
+  
 
 
 }
@@ -82,10 +83,10 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-inline: 2rem;
+  padding:  1rem 2rem;
   align-items: center;
   margin-left: 1rem;
-  margin-top: 10px;
+
 }
 
 .button-login {
@@ -199,15 +200,16 @@
   display: flex;
   flex-direction: row;
   background-color: #30FF14;
-  padding: 3rem 3rem 0 3rem;
+  padding: 3rem 3rem 6rem 3rem;
   justify-content: space-evenly;
   color: black;
-  padding: 10px 0;
+
   white-space: nowrap;
+
   position: relative;
   text-align: center;
   margin-inline: auto;
-  width: 100%;
+
   font-family: "Orbitron", sans-serif;
 
   /* From https://css.glass */
@@ -224,6 +226,7 @@
   display: flex;
   justify-content: space-around;
   margin-top: 2rem;
+  margin-bottom: 3rem;
 }
 
 .prepare-section aside div article {
@@ -237,6 +240,7 @@
 }
 
 .courses-section {
+  display: flex;
 
   width: 100%;
 
@@ -291,18 +295,23 @@
 .cursos-container {
   width: 100%;
   display: flex;
-  padding-block: 5rem;
+  flex-direction: row;
+  padding: 5rem 2rem;
   flex-wrap: wrap;
   gap: 25px;
-justify-content: center;
+  justify-content: center;
   margin-inline: auto;
 
-  background-image: url(./assets/imgs/11540.jpg);
+  margin: 0 auto;
+
+  background-size: cover;
+  background-position: center;
+  background-image: url(./assets/imgs/abstratos-techno-fundo-ligar-linhas.jpg);
 }
 
 /* Card de curso */
 .curso-card-moderno {
-  width: 350px;
+  max-width: 300px;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -493,9 +502,7 @@ justify-content: center;
     grid-template-columns: 1fr;
   }
 
-  .curso-card-moderno {
-    max-width: 100%;
-  }
+ 
 }
 
 
@@ -644,4 +651,152 @@ justify-content: center;
 .admin-table td {
   max-height: 100px;
   overflow-y: auto;
+}
+
+
+
+
+.testimunhos-sections {
+  background-color: #30FF14;
+
+
+}
+
+.testimonials-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: black;
+  margin: 10px auto;
+  border-radius: 2px;
+}
+
+.testimonials-container {
+  columns: 300px auto;
+  column-gap: 20px;
+  padding: 20px;
+}
+
+.testimonial-card {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  break-inside: avoid;
+  margin-bottom: 20px;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.student-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.student-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--light-gray);
+  background-size: cover;
+  background-position: center;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.logo {
+  width: 80px;
+  height: 50px;
+
+  background-color: var(--light-gray);
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.student-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.student-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 3px;
+  color: var(--secondary-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.student-id {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.testimonial-text {
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.category-tag {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #333;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: var(--secondary-color);
+  margin-top: 10px;
+}
+
+.load-more {
+  display: block;
+  margin: 30px auto;
+  padding: 12px 30px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.load-more:hover {
+  background-color: white;
+  color: var(--primary-color);
+  box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .testimonials-container {
+    columns: 1;
+  }
 }
