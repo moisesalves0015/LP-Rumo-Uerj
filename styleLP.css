@@ -3,6 +3,10 @@
   font-family: "Poppins", sans-serif;
 }
 
+body{
+  overflow-x: hidden;
+}
+
 .logo {
   height: 70px;
 }
@@ -241,10 +245,31 @@
 
 .courses-section {
   display: flex;
-
+color: white;
   width: 100%;
+  background-color: black;
+ 
+  padding-bottom: 5rem;
 
 
+}
+.courses-section  aside > button{
+    border: 2px solid #30FF14;
+    height: 40px;
+    border-radius: 9px;
+    padding: 5px 10px;
+    color: black;
+    background-color: #30FF14;
+    font-weight: 600;
+   
+    font-size: 1rem;
+  margin-block: 3rem;
+}
+
+.courses-section  aside > button:hover {
+  background-color: white;
+  color: var(--primary-color);
+  box-shadow: 0 0 0 2px var(--primary-color);
 }
 
 .curso-header-moderno {
@@ -252,7 +277,7 @@
   /* From https://css.glass */
   background: rgba(48, 255, 20, 0.81);
 
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+ 
   backdrop-filter: blur(4.3px);
   -webkit-backdrop-filter: blur(4.3px);
   border: 1px solid rgba(48, 255, 20, 0.83);
@@ -293,20 +318,18 @@
 
 /* Container principal */
 .cursos-container {
-  width: 100%;
+
   display: flex;
   flex-direction: row;
-  padding: 5rem 2rem;
+
   flex-wrap: wrap;
   gap: 25px;
   justify-content: center;
   margin-inline: auto;
 
-  margin: 0 auto;
 
-  background-size: cover;
-  background-position: center;
-  background-image: url(./assets/imgs/abstratos-techno-fundo-ligar-linhas.jpg);
+
+ 
 }
 
 /* Card de curso */
@@ -674,17 +697,20 @@
   margin-bottom: 30px;
   color: var(--primary-color);
   position: relative;
+
 }
 
-.section-title::after {
-  content: '';
-  display: block;
-  width: 80px;
-  height: 4px;
+.section-title2 {
+  text-align: center;
+  font-size: 2.5rem;
+  padding-bottom: 30px;
+  color: white;
+  position: relative;
   background-color: black;
-  margin: 10px auto;
-  border-radius: 2px;
+
 }
+
+
 
 .testimonials-container {
   columns: 300px auto;
@@ -697,7 +723,7 @@
   color: white;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  padding: 25px;
+  padding: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   break-inside: avoid;
   margin-bottom: 20px;
@@ -710,7 +736,7 @@
 
 .student-header {
   display: flex;
-  align-items: center;
+  align-items: top;
   margin-bottom: 15px;
 }
 
@@ -721,18 +747,17 @@
   background-color: var(--light-gray);
   background-size: cover;
   background-position: center;
-  margin-right: 15px;
+  margin-right: 10px;
   flex-shrink: 0;
 }
 
 .logo {
-  width: 80px;
-  height: 50px;
-
+  width: 50px;
+ height: 40px;
+margin-right: auto;
   background-color: var(--light-gray);
-  background-size: cover;
+  background-size:cover;
   background-position: center;
-  flex-shrink: 0;
 }
 
 .student-info {
@@ -742,8 +767,7 @@
 
 .student-name {
   font-weight: 700;
-  font-size: 1.1rem;
-  margin-bottom: 3px;
+  font-size: 0.9rem;
   color: var(--secondary-color);
   white-space: nowrap;
   overflow: hidden;
@@ -752,11 +776,11 @@
 
 .student-id {
   color: #aaa;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
 .testimonial-text {
-  line-height: 1.6;
+  line-height: 1.4;
   margin-bottom: 15px;
   font-style: italic;
 }
@@ -772,13 +796,15 @@
 }
 
 .load-more {
+
+    height: 50px;
+    border-radius: 9px;
+    padding: 5px 12px;
+    color: white;
+    background-color: black;
+    font-weight: 600;
   display: block;
   margin: 30px auto;
-  padding: 12px 30px;
-  background-color: black;
-  color: white;
-  border: none;
-  border-radius: 30px;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -795,8 +821,110 @@
   display: none;
 }
 
+
+
+
+
 @media (max-width: 768px) {
   .testimonials-container {
     columns: 1;
+  }
+}
+
+
+
+.youtube-section2 {
+  padding: 4rem 0;
+  background-color:white ;
+  text-align: center;
+}
+
+.youtube-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.youtube-content h2 {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.youtube-content .lead {
+  font-size: 1.2rem;
+  color: #4a5568;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+.youtube-embed {
+  margin: 2rem auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.cta-container {
+  margin-top: 2rem;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  background: #FF0000;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  background: #cc0000;
+}
+
+.cta-button i {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.small-text {
+  margin-top: 10px;
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .youtube-section2 {
+    padding: 2.5rem 0;
+  }
+  
+  .youtube-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .youtube-content .lead {
+    font-size: 1rem;
+  }
+  
+  .youtube-embed {
+    margin: 1.5rem auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .youtube-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
   }
 }

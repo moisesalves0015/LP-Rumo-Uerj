@@ -1,4 +1,5 @@
 const logo = "assets/imgs/Logo.svg"
+
         const alunosData = [
             {
                 category: "Mente Primine",
@@ -82,6 +83,7 @@ const logo = "assets/imgs/Logo.svg"
                     <div class="student-info">
                         <div class="student-name">${aluno.name}</div>
                         <div class="student-id">ID: ${aluno.id}</div>
+                        <img src="./assets/imgs/estrelas.svg" alt="">
                     </div>
                      <div class="logo" style="background-image: url('${logo}')"></div>
                 </div>
